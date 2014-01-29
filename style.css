@@ -1,3 +1,11 @@
+*,*:before,*:after{
+	margin:0;
+	padding:0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 body {
 	background-color: #999;
 	font-family:'Univers LT W01 55 Roman';
@@ -112,4 +120,102 @@ tbody td {
 
 .urgent {
 	color:#7e1619;
+}
+
+/* Task Module */
+
+.tasks-module {
+	width:100%;
+}
+
+.task-sorting {
+	float:left;
+	width:50%;
+	margin-bottom:10px;
+}
+
+#sort-choice {
+
+}
+
+div.user-select,div.client-select {
+	float:left;
+	width:50%;
+	display:none;
+}
+
+#user-select {
+}
+
+div.task-sorting p, div.user-select p, div.client-select p {
+	text-transform: uppercase;
+	font-family: 'Rokkitt', serif;
+	font-weight: normal;
+	color: #7e1619;
+}
+
+.single-task, .task-content {
+	width:100%;
+	float:left;
+}
+
+.single-task {
+	margin-bottom:10px;
+}
+
+.single-task p {
+
+}
+
+.task-name {
+
+}
+
+.task-duedate {
+
+}
+
+.task-client {
+
+}
+
+.task-note {
+
+}
+
+/* Login Panel */
+
+.login-panel {
+width:33%;
+margin-left:auto;
+margin-right:auto;
+}
+
+.login-panel input,.login-panel p {
+width:100%;
+float:left;
+margin-bottom:10px;
+}
+
+.login-panel input[type=submit] {
+width:33%;
+margin-left:33%;
+}
+
+/* Master Ball */
+
+.master-ball {
+position:fixed;
+width:100%;
+height:25px;
+background:rgba(190,190,190,.8);
+}
+
+.master-ball-quicklinks {
+float:right;
+}
+
+.master-ball-quicklinks a {
+float:right;
+margin-left:15px;
 }

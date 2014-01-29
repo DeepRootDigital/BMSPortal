@@ -1,32 +1,63 @@
 <?php include 'header.php'; ?>
-<h1>Malta Development</h1>
+<?php $id = $_REQUEST['client']; 
+$client = mysqli_query($coninfo,"SELECT * FROM Clients WHERE ID='" . $id . "'"); 
+while ($row = mysqli_fetch_assoc($client)) { ?>
+<h2><?php echo $row['ClientName']; ?></h2>
+<?php 
+$clientname = $row['ClientName'];
+$select = $row['Status'];
+$accexec = $row['AccountExec'];
+$contactname = $row['ContactName'];
+$email = $row['Email'];
+$phone = $row['Phone'];
+$url = $row['URL'];
+$testurl = $row['TestURL'];
+$note = $row['Notes'];
+$hosturl = $row['HostURL'];
+$hostuser = $row['HostUser'];
+$hostpw = $row['HostPW'];
+$wpuser = $row['WPUser'];
+$wppw = $row['WPPW'];
+} ?>
 <ul>
 	<li>
 		Status: 
 		<select>
-			<option>Active</option>
-			<option>Retired</option>
+			<option<?php if ($select == 'Active') { ?> selected <?php } ?>>Active</option>
+			<option<?php if ($select == 'Retired') { ?> selected <?php } ?>>Retired</option>
 		</select>
 	</li>
 	<li>
-		Completion Status: <progress value="22" max="100"></progress>
+<?php $client = mysqli_query($coninfo,"SELECT ID FROM Tasks WHERE Client='" . $clientname . "'"); 
+$total = 0;
+while ($row = mysqli_fetch_assoc($client)) {
+$total = $total + 1; 
+}
+$client = mysqli_query($coninfo,"SELECT ID FROM Tasks WHERE Client='" . $clientname . "' AND Status='Complete'");
+$complete = 0;
+while ($row = mysqli_fetch_assoc($client)) {
+$complete = $complete + 1;
+}
+$math = floor(($complete / $total) * 100);
+?>
+		Completion Status: <progress value="<?php echo $math; ?>" max="100"></progress>
 	</li>
-	<li>Account Executive: Sean Farias</li>
+	<li>Account Executive: <?php echo $accexec; ?></li>
 </ul>
 <div class="row">
 	<h2>Action Center</h2>
 	<div class="col-half">
 		<h3>Point of Contact:</h3>
 		<ul>
-			<li>Name: Beth Malta</li>
-			<li>Phone: 619-729-8424</li>
-			<li>Email: Beth@maltadev.com</li>
-			<li>URL: http://maltadevelopment.com</li>
+			<li>Name: <?php echo $contactname; ?></li>
+			<li>Phone: <?php echo $phone; ?></li>
+			<li>Email: <?php echo $email; ?></li>
+			<li>URL: <?php echo $url; ?></li>
 		</ul>
 	</div>
 	<div class="col-half">
 		<h3>Work Summary:</h3>
-		<p>Business on Market St. has been contracted to write X number of blog posts and perform web maintinence for a period of 3 months.</p>
+		<p><?php echo $note; ?></p>
 	</div>
 </div>
 <div class="row">
@@ -40,6 +71,7 @@
 	</div>
 	<div class="col-half">
 		<h3>Update the Client:</h3>
+ <!--
 		<ul>
 			<li>
 				Send a Report:
@@ -58,6 +90,7 @@
 				<button>Beth@MaltaDev.com</button>
 			</li>
 		</ul>
+-->
 	</div>
 </div>
 <div class="row">
@@ -65,8 +98,8 @@
 	<div class="col">
 		<h3>Digital Assets:</h3>
 		<ul>
-			<li><img src="images/urlicon.png">Live website</li>
-			<li><img src="images/urlicon.png">Testing website</li>
+			<li><a href="<?php echo $url; ?>"><img src="images/urlicon.png">Live website</a></li>
+			<li><a href="<?php echo $testurl; ?>"><img src="images/urlicon.png">Testing website</a></li>
 			<li><img src="images/PSDIcon.png">Design PSD Homepage</li>
 		</ul>
 	</div>
@@ -81,10 +114,14 @@
 		<h3>Systems Credentials:</h3>
 		<ul>
 			<li>
-				CPANEL URL: <a href="">http://cpanel.com</a><br/>
-				CPANEL Username: admin<br/>
-				CPANEL Password: 10201991
+				HOST URL: <a href="<?php echo $hosturl; ?>"><?php echo $hosturl; ?></a><br/>
+				HOST Username: <?php echo $hostuser; ?><br/>
+				HOST Password: <?php echo $hostpw; ?>
 			</li>
+                        <li>
+				WP Username: <?php echo $wpuser; ?><br/>
+				WP Password: <?php echo $wppw; ?>                        
+                        </li>
 		</ul>
 	</div>
 </div>
