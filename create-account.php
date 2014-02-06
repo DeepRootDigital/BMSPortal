@@ -1,5 +1,5 @@
 <?php include 'header.php'; ?>
-
+<?php if ($permissions[0] == 1) { ?>
 <div class="row">
 <div class="create-account-panel">
 <form method="POST" action="actions/createaccount.php">
@@ -31,5 +31,5 @@
 </form>
 </div>
 </div>
-
+<?php } ?>
 <?php include 'footer.php'; ?>

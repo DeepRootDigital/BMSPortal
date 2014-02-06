@@ -1,5 +1,6 @@
 <?php include 'header.php'; ?>
 <div class="row">
+<?php if ($permissions[1] == 1) { ?>
 	<div class="col">
 		<?php include 'modules/tasks-list.php'; ?>
 	</div>
@@ -14,5 +15,6 @@
 			<li>12/1/2013 - By Bob Afsari, Company Xmas Party on Saturday.</li>
 		</ul>
 	</div>
+<?php } ?>
 </div>
 <?php include 'footer.php'; ?>

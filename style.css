@@ -219,3 +219,21 @@ float:right;
 float:right;
 margin-left:15px;
 }
+
+.inbox-link {
+float:right;
+}
+
+/* Inbox */
+
+.inbox-nav {
+margin-bottom:30px;
+}
+
+.single-message {
+margin-bottom:5px;
+}
+
+.notchecked {
+font-weight:bold;
+}

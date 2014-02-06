@@ -1,3 +1,4 @@
+<?php if ($permissions[3] == 1) { ?>
 <div class="client-module">
 	<h2>Clients</h2>
 	    <span>Sort by: <a href="#" class="clients-active">Active</a> / <a href="#" class="clients-retired">Retired</a> / <a href="#" class="clients-all">All</a></span>
@@ -9,3 +10,4 @@
                 <?php } ?>
 	    </ul>
 </div>
+<?php } ?>

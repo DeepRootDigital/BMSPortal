@@ -3,6 +3,16 @@ $(document).ready(function(){
 		$('.webdev').hide();
 	});
 
+        function checkmsgs() {
+       		setInterval(
+       			function(){
+       				$('.inbox-link a').remove();
+                                $('.inbox-link').load('actions/checkmsgs.php?user=' + getCookie("BMS_Portal"));
+       			},10000);
+       }
+
+       checkmsgs();
+
         function changetasklist() {
                 var e = document.getElementById("sort-choice");
 		var f = e.options[e.selectedIndex].value;
@@ -33,6 +43,12 @@ $(document).ready(function(){
              $('.single-task').remove();
              $('.task-content').load('actions/taskquery.php?sorttype='+$('#sort-choice').val()+'&sortoption='+$('#client-select').val());
         }
+
+        $('.messagelink').click(function() {
+             var input = $(this).attr('class').split('-').slice(-1);
+             $('.single-message').remove();
+             $('.inbox-content').load('actions/msgquery.php?input='+input);
+        });
 
         function changeuser() {
              $('.single-task').remove();
@@ -75,5 +91,17 @@ $(document).ready(function(){
                 $('.client-module ul li').remove();
                 $('.client-module ul').load('actions/clientquery.php?sortoption=All');
         });
+
+        function getCookie(cname)
+{
+var name = cname + "=";
+var ca = document.cookie.split(';');
+for(var i=0; i<ca.length; i++) 
+  {
+  var c = ca[i].trim();
+  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+  }
+return "";
+}
 
 });

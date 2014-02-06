@@ -1,4 +1,5 @@
 <?php include 'header.php'; ?>
+<?php if ($permissions[2] == 1) { ?>
 <?php $id = $_REQUEST['client']; 
 $client = mysqli_query($coninfo,"SELECT * FROM Clients WHERE ID='" . $id . "'"); 
 while ($row = mysqli_fetch_assoc($client)) { ?>
@@ -125,4 +126,5 @@ $math = floor(($complete / $total) * 100);
 		</ul>
 	</div>
 </div>
+<?php } ?>
 <?php include 'footer.php'; ?>

@@ -1,4 +1,5 @@
 <?php include 'header.php'; ?>
+<?php if ($permissions[5] == 1) { ?>
 <?php if ($_COOKIE['BMS_Portal']) { ?>
 <div class="row">
 <div class="create-account-panel">
@@ -35,6 +36,7 @@ while ($row = mysqli_fetch_assoc($users)) { ?>
 </div>
 <?php } else { 
 header('Location: http://portal.businessonmarketst.com/login.php');
+}
 } ?>
 
 <?php include 'footer.php'; ?>
