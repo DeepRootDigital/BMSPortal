@@ -60,6 +60,16 @@ tbody td {
 	padding-bottom:5px;
 }
 
+input {
+border:0;
+background:none;
+background-color:#ffffff;
+border:1px solid #3f3f3f;
+border-radius:3px;
+padding-left:5px;
+padding-right:5px;
+}
+
 .nmap {
 	float: left;
 	width:828px;
@@ -236,4 +246,10 @@ margin-bottom:5px;
 
 .notchecked {
 font-weight:bold;
+}
+
+/* Meme Generator */
+
+.small-picture {
+margin-bottom: 30px;
 }
