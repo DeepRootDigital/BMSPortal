@@ -1,10 +1,12 @@
 $(document).ready(function(){
 
+if ($('#container').length > 0) {
+
         $('#newblurb').click(function(){
             var currentblurbcount = $('.text-blurb-single').length;
             var newblurbcount = currentblurbcount + 1;
 
-            $('.text-blurbs').append('<div class="text-blurb-single"><label for="textblurb-'+newblurbcount+'">Enter text for the canvas:</label><input name="textblurb-'+newblurbcount+'" id="textblurb-'+newblurbcount+'" value="Pop-up cham stache four loko"><br /><label for="textsize-'+newblurbcount+'">Text size?</label><input name="textsize-'+newblurbcount+'" value="40" id="textsize-'+newblurbcount+'"><br /><label for="textwidth-'+newblurbcount+'">Text width?</label><input name="textwidth-'+newblurbcount+'" value="230" id="textwidth-'+newblurbcount+'"></div>');
+            $('.text-blurbs').append('<div class="text-blurb-single"><label for="textblurb-'+newblurbcount+'">Enter text for the canvas:</label><input name="textblurb-'+newblurbcount+'" id="textblurb-'+newblurbcount+'" value="Pop-up cham stache four loko"><br /><label for="textsize-'+newblurbcount+'">Text size?</label><input name="textsize-'+newblurbcount+'" value="40" id="textsize-'+newblurbcount+'"><br /><label for="textwidth-'+newblurbcount+'">Text width?</label><input name="textwidth-'+newblurbcount+'" value="230" id="textwidth-'+newblurbcount+'"></div><label for="textfam-'+newblurbcount+'">Font Family?</label><select name="textfam-'+newblurbcount+'" id="textfam-'+newblurbcount+'"><option>Din</option><option>Helvetica</option><option>Georgia</option></select>');
         
         });
 
@@ -14,6 +16,8 @@ $(document).ready(function(){
             $('.small-picture-single').remove();
             $('.small-picture-container').load('actions/smallimagelist.php?count='+newimgcount);
         });
+
+      
 
 
 
@@ -26,6 +30,7 @@ $(document).ready(function(){
 	stage = new Kinetic.Stage({container: 'container', width: bgwidth, height: bgheight});
 	layer = new Kinetic.Layer();
    
+        
         
         var imageObj = new Image();
         imageObj.onload = function() {
@@ -96,13 +101,14 @@ for (i=1;i<=textblurbcount;i++) {
      var textinput = $('input#textblurb-'+i).val();
      var textsize = $('input#textsize-'+i).val();
      var textwidth = $('input#textwidth-'+i).val();
+     var textfam = $('input#textfam-'+i).val();
 
-      var complexText = new Kinetic.Text({
+     var complexText = new Kinetic.Text({
         x: textx,
         y: texty,
         text: textinput,
+        fontFamily: textfam,
         fontSize: textsize,
-        fontFamily: 'Georgia',
         fill: '#ffffff',
         width: textwidth,
         padding: 0,
@@ -149,6 +155,29 @@ drawCanvas();
         });
 
         $('#update').click(function(){
+            var filechoice = $('#filechoice').val();
+            var boxspot = $('#boxspot').val();
+            var boxpercent = $('#boxpercent').val();
+            var bgwidth = $('#bgwidth').val();
+            var bgheight = $('#bgheight').val();
+            var textblurbcount = $('.text-blurb-single').length;
+            setCookie('filechoice',filechoice,1);
+            setCookie('boxspot',boxspot,1);
+            setCookie('boxpercent',boxpercent,1);
+            setCookie('bgwidth',bgwidth,1);
+            setCookie('bgheight',bgheight,1);
+            setCookie('textblurbcount',textblurbcount,1);
+
+            for (i=1;i<=textblurbcount;i++) {
+                    var textblurb = $('input#textblurb-'+i).val();
+                    var textsize = $('input#textsize-'+i).val();
+                    var textwidth = $('input#textwidth-'+i).val();
+                    var textfam = $('input#textfam-'+i).val();
+                    setCookie('textblurb'+i,textblurb,1);
+                    setCookie('textsize'+i,textsize,1);
+                    setCookie('textwidth'+i,textwidth,1);
+                    setCookie('textfam'+i,textfam,1);
+            }
             drawCanvas();
         });
 
@@ -173,6 +202,15 @@ drawCanvas();
             stage.add(layer);
             };
             imageObject.src = 'upload/small/'+$('#filechoice-'+j).val();
+        }
+
+}
+
+function setCookie(c_name,value,exdays) {
+              var exdate=new Date();
+              exdate.setDate(exdate.getDate() + exdays);
+              var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+              document.cookie=c_name + "=" + c_value;
         }
 
 });

@@ -4,6 +4,7 @@
 <div class="inbox-panel">
 <div class="inbox-nav">
 <a href="#" class="messagelink messageid-all">Inbox</a>
+<a href="sendmessage.php">Send New Message</a>
 </div>
 <div class="inbox-content">
 <?php

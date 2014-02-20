@@ -63,13 +63,25 @@ $math = floor(($complete / $total) * 100);
 </div>
 <div class="row">
 	<div class="col-half">
-		<h3>Current Tasks:</h3>
-		<span>Sort by: <a href="">Active</a> / <a href="">Completed</a></span>
-		<ul>
-			<li><input type="checkbox">Fix Buglist assigned to Team Wombat<br/> <span class="urgent">Due By: 1/9/2012</span></li>
-			<li><input type="checkbox">Work on Deal assigned to Team Business<br/> Due By: 3/19/2012</li>
-		</ul>
+            <h3>Task List: </h3>
+	    <div class="task-content">
+                <?php
+                    function taskquery($database,$sorttype,$sortoption){
+			$result = mysqli_query($database,"SELECT * FROM Tasks WHERE Client='" . $sortoption . "'");
+                        while($row = mysqli_fetch_array($result)) { 
+                ?>
+                <div class="single-task">
+			<p class="task-name"><?php echo $row['TaskID']; ?></p>
+			<p class="task-duedate"><?php echo $row['EndDate']; ?></p>
+			<p class="task-client"><?php echo $row['Status']; ?></p>
+			<p class="task-note"><span>Details:</span> <?php echo $row['Note']; ?></p>
+		</div>
+                <?php                   }
+	        }
+                taskquery($coninfo,"Client",$clientname);
+                ?>
 	</div>
+</div>
 	<div class="col-half">
 		<h3>Update the Client:</h3>
  <!--
@@ -101,7 +113,11 @@ $math = floor(($complete / $total) * 100);
 		<ul>
 			<li><a href="<?php echo $url; ?>"><img src="images/urlicon.png">Live website</a></li>
 			<li><a href="<?php echo $testurl; ?>"><img src="images/urlicon.png">Testing website</a></li>
-			<li><img src="images/PSDIcon.png">Design PSD Homepage</li>
+<?php
+$mediaquery = mysqli_query($coninfo,"SELECT Filename,Filelocation FROM FileServer WHERE Client='" . $clientname . "'"); 
+while ($row = mysqli_fetch_assoc($mediaquery)) { ?>
+<li><a href="<?php echo $row['Filelocation']; ?>"><?php echo $row['Filename']; ?></a></li>
+<?php } ?>
 		</ul>
 	</div>
 	<div class="col">

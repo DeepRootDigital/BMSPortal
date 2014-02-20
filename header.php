@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <?php include 'functions.php'; ?>
@@ -10,10 +11,19 @@
 </head>
 <body>
         <div class="master-ball">
+                <?php if($_COOKIE['BMS_Portal']) { ?>
+                <div class="master-ball-controller">
+                        <a href="#" class="clockin">Clock In</a>
+                        <a href="#" class="lunchout">Lunch Out</a>
+                        <a href="#" class="lunchin">Lunch In</a>
+                        <a href="#" class="clockout">Clock Out</a>
+                </div>
+                <?php } ?>
                 <div class="master-ball-quicklinks">
                     <?php if ($_COOKIE['BMS_Portal']) { ?>
                         <a href="#" class="mb-logout">Logout</a>
                         <a href="http://portal.businessonmarketst.com/create-task.php">New Task</a>
+                        <a href="#" class="fileserver-upload-button">Upload</a>
                         <a href="http://portal.businessonmarketst.com/user-hud.php">User HUD</a>
                         <?php
 $msgs = mysqli_query($coninfo,"SELECT ID FROM Messages WHERE Receiver='" . $_COOKIE['BMS_Portal'] . "' AND Checked=0"); 

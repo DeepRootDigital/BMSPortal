@@ -1,0 +1,27 @@
+[11-Feb-2014 17:43:00 America/Chicago] PHP Warning:  include(dbconnect.php): failed to open stream: No such file or directory in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 7
+[11-Feb-2014 17:43:00 America/Chicago] PHP Warning:  include(dbconnect.php): failed to open stream: No such file or directory in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 7
+[11-Feb-2014 17:43:00 America/Chicago] PHP Warning:  include(): Failed opening 'dbconnect.php' for inclusion (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 7
+[11-Feb-2014 17:43:00 America/Chicago] PHP Notice:  Undefined variable: coninfo in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 8
+[11-Feb-2014 17:43:00 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 8
+[11-Feb-2014 17:43:00 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 9
+[11-Feb-2014 17:43:00 America/Chicago] PHP Notice:  Undefined variable: coninfo in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 16
+[11-Feb-2014 17:43:00 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 16
+[11-Feb-2014 17:43:00 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 17
+[11-Feb-2014 17:43:53 America/Chicago] PHP Warning:  include(../action/dbconnect.php): failed to open stream: No such file or directory in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 7
+[11-Feb-2014 17:43:53 America/Chicago] PHP Warning:  include(../action/dbconnect.php): failed to open stream: No such file or directory in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 7
+[11-Feb-2014 17:43:53 America/Chicago] PHP Warning:  include(): Failed opening '../action/dbconnect.php' for inclusion (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 7
+[11-Feb-2014 17:43:53 America/Chicago] PHP Notice:  Undefined variable: coninfo in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 8
+[11-Feb-2014 17:43:53 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 8
+[11-Feb-2014 17:43:53 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 9
+[11-Feb-2014 17:43:53 America/Chicago] PHP Notice:  Undefined variable: coninfo in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 16
+[11-Feb-2014 17:43:53 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 16
+[11-Feb-2014 17:43:53 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 17
+[11-Feb-2014 17:44:04 America/Chicago] PHP Warning:  include(../action/dbconnect.php): failed to open stream: No such file or directory in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 7
+[11-Feb-2014 17:44:04 America/Chicago] PHP Warning:  include(../action/dbconnect.php): failed to open stream: No such file or directory in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 7
+[11-Feb-2014 17:44:04 America/Chicago] PHP Warning:  include(): Failed opening '../action/dbconnect.php' for inclusion (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 7
+[11-Feb-2014 17:44:04 America/Chicago] PHP Notice:  Undefined variable: coninfo in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 8
+[11-Feb-2014 17:44:04 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 8
+[11-Feb-2014 17:44:04 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 9
+[11-Feb-2014 17:44:04 America/Chicago] PHP Notice:  Undefined variable: coninfo in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 16
+[11-Feb-2014 17:44:04 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 16
+[11-Feb-2014 17:44:04 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/ltfas10k/public_html/portal/modules/fileserver-upload.php on line 17

@@ -92,6 +92,18 @@ $(document).ready(function(){
                 $('.client-module ul').load('actions/clientquery.php?sortoption=All');
         });
 
+        $('.fileserver-upload-button').click(function(){
+                $('.popup-overlay').css('display','block');
+                $('.popup-content').css('display','block');
+                $('.popup-content').load('modules/fileserver-upload.php');
+        });
+
+        $('.popup-overlay').click(function(){
+                $('.popup-overlay').css('display','none');
+                $('.popup-content').css('display','none');
+                $('.popup-content').children().remove();
+        });
+
         function getCookie(cname)
 {
 var name = cname + "=";
@@ -103,5 +115,22 @@ for(var i=0; i<ca.length; i++)
   }
 return "";
 }
+
+
+         $('.template-task-submit').click(function(){
+             event.preventDefault();
+             var draftAssigned = $('#draft-assigned').val();
+             var draftStart = $('#draft-startdate').val();
+             var draftEnd = $('#draft-enddate').val();
+             var draftNote = $('#draft-note').val();
+             var designAssigned = $('#design-assigned').val();
+             var designStart = $('#design-startdate').val();
+             var designEnd = $('#design-enddate').val();
+             var designNote = $('#design-note').val();
+             var developerAssigned = $('#developer-assigned').val();
+             var developerStart = $('#developer-startdate').val();
+             var developerEnd = $('#developer-enddate').val();
+             var developerNote = $('#developer-note').val();
+         });
 
 });
